@@ -15,6 +15,7 @@
     </div>
 
 </nav>
+<!-- END nav -->
 
 <div class="hero-wrap" style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>

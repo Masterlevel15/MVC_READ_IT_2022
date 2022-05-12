@@ -7,7 +7,6 @@
             </div>
           </div>
 
-          <!-- .col-md-8 -->
           <?php include '../app/vues/template/partials/_aside.php'?>
         </div>
       </div>
