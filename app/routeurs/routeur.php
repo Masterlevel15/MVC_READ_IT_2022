@@ -3,7 +3,12 @@
 //pattern:/
 //ctrl: postsController
 //ACTION: index
-
-include '../app/controleurs/postsController.php';
-indexAction($connexions);
+if(isset($_GET['postID'])):
+    include '../app/controleurs/postsController.php';
+    showAction($connexions, $_GET['postID']);
+    
+else:
+    include '../app/controleurs/postsController.php';
+    indexAction($connexions);
+endif;
 ?>
