@@ -1,8 +1,8 @@
-<div class="col-lg-8 ftco-animate">
+
           	<p class="mb-5">
               <img src="assets/images/<?php echo $post['image'];?>" alt="" class="img-fluid">
             </p>
-
+ 
             <h1 class="mb-3 h1">A<?php echo $post['title'];?></h1>
             <div>
                 <?php echo $post['content'];?>
@@ -10,21 +10,19 @@
             <!--TAGS-->
             <?php 
                 include_once '../app/models/tagsModel.php';
-                $tags = findAllByPostId($connexions, $post['id']);
+                $tags = \App\Models\TagsModel\findAllByPostId($connexions, $post['id']);
                 include '../app/vues/tags/_indexByPostId.php';
                 //indexBypostIdAction($connexions, $post['id'];);
             ?>
             
             <!--AUTHOR-->
-            <div class="about-author d-flex p-4 bg-light">
-              <div class="bio mr-5">
-                <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-              </div>
-              <div class="desc">
-                <h3>George Washington</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-              </div>
-            </div>
+            <?php 
+            use App\Models\AuthorsModel as author;
+                include_once '../app/models/authorModel.php';
+                $author = author\findOneById($connexions, $post['author_id']);
+                include '../app/vues/authors/_show.php';
+            ?>
+           
 
 
             <div class="pt-5 mt-5">
@@ -76,4 +74,3 @@
               </div>
             </div>
 
-          </div>

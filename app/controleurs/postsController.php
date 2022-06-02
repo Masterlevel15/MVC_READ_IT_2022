@@ -1,9 +1,12 @@
 <?php  
 //Un controlleur par table. 
 // Table posts
+namespace App\Controleurs\PostsController;
+use \PDO, \App\Models\PostsModel;
+
     function indexAction(PDO $connexions){
         include_once '../app/models/postModel.php';
-        $posts = findAll($connexions);
+        $posts = PostsModel\findAll($connexions);
 
         GLOBAL $content;
         ob_start();
@@ -13,7 +16,7 @@
 
     function showAction(PDO $connexions, int $id){
         include_once '../app/models/postModel.php';
-        $post = findOneById($connexions, $id);
+        $post = PostsModel\findOneById($connexions, $id);
 
         GLOBAL $content;
         ob_start();

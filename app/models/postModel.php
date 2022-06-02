@@ -1,4 +1,6 @@
 <?php
+namespace App\Models\PostsModel;
+use \PDO;
 function findAll(PDO $connexions){
     $sql = "SELECT *
             FROM posts

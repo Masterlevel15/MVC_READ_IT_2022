@@ -1,4 +1,6 @@
 <?php
+namespace App\Models\tagsModel;
+use \PDO;
 function findAllByPostId(PDO $connexions, int $postID){
  $sql = "SELECT *
         FROM tags t
