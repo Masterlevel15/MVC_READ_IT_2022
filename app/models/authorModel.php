@@ -2,6 +2,7 @@
 namespace App\Models\AuthorsModel;
 use \PDO;
 function findOneById(PDO $connexions, int $id){
+    
     $sql = "SELECT *
             FROM authors
             WHERE id = :id;";

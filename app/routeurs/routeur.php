@@ -7,9 +7,10 @@ use \App\Controleurs\PostsController;
 if(isset($_GET['postID'])):
     include '../app/controleurs/postsController.php';
     PostsController\showAction($connexions, $_GET['postID']);
+elseif(isset($_GET['contact'])):
     
 else:
     include '../app/controleurs/postsController.php';
-    indexAction($connexions);
+    PostsController\indexAction($connexions);
 endif;
 ?>

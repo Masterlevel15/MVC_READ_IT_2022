@@ -9,13 +9,13 @@
                         <div class="one py-2 pl-3 pr-1 align-self-stretch">
                             <span class="day">
 								<?php
-								echo getFormatedDate($post['created_at'], 'd');
+								echo \Core\Functions\getFormatedDate($post['created_at'], 'd');
 								?>
 							</span>
                         </div>
                         <div class="two pl-0 pr-3 py-2 align-self-stretch">
-                            <span class="yr"><?php echo getFormatedDate($post['created_at'], 'Y');?></span>
-                            <span class="mos"><?php echo getFormatedDate($post['created_at'], 'F');?></span>
+                            <span class="yr"><?php echo \Core\Functions\getFormatedDate($post['created_at'], 'Y');?></span>
+                            <span class="mos"><?php echo \Core\Functions\getFormatedDate($post['created_at'], 'F');?></span>
                         </div>
                     </div>
                     <h3 class="heading mb-3"><a href="?postID=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h3>
