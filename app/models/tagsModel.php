@@ -1,5 +1,5 @@
 <?php
-namespace App\Models\tagsModel;
+namespace App\Models\TagsModel;
 use \PDO;
 function findAllByPostId(PDO $connexions, int $postID){
  $sql = "SELECT *
@@ -12,6 +12,15 @@ function findAllByPostId(PDO $connexions, int $postID){
     $rs->bindValue(':postID', $postID, PDO::PARAM_INT);
     $rs->execute();
 
+    return $rs->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function findAll(PDO $connexions){
+    $sql="SELECT *
+        FROM tags 
+        ORDER BY name ASC;";
+    
+    $rs = $connexions->query($sql);
     return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
