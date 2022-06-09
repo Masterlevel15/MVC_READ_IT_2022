@@ -7,7 +7,7 @@
             </div>
           </div>
 
-          <?php include '../app/vues/template/partials/_aside.php'?>
+          <?php include '../app/vues/template/partials/_aside.php';?>
         </div>
       </div>
     </section> <!-- .section -->
